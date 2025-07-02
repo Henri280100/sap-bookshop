@@ -1,0 +1,22 @@
+
+### CREATE a Customer
+POST http://localhost:4004/odata/v4/processor/Customers
+Content-Type: application/json
+
+{
+    "firstName": "Henri",
+    "lastName": "Doe",
+    "email": "HenriDoe@gmail.com",
+    "phone": "84532116578"
+}
+
+### Create an Incidents
+POST http://localhost:4004/odata/v4/processor/Incidents
+Content-Type: application/json
+
+{
+    "title": "Inverter not functional",
+    "urgency_code": "H",
+    "status_code": "C"
+}
+
