@@ -4,9 +4,12 @@ namespace sap.capire;
 
 
 entity Urgency : CodeList {
-    key code : String enum {
-            high = 'H';
-            medium = 'M';
-            low = 'L';
-        };
+    key code : UrgencyCode;
+
 }
+
+type UrgencyCode : String enum {
+    high = 'H';
+    medium = 'M';
+    low = 'L';
+};

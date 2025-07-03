@@ -15,15 +15,3 @@ type StatusCode : String enum {
     resolved = 'R';
     closed = 'C';
 }
-
-// enum Status : CodeList {
-//     key code        : String enum {
-//             new = 'N';
-//             assigned = 'A';
-//             in_process = 'I';
-//             on_hold = 'H';
-//             resolved = 'R';
-//             closed = 'C';
-//         };
-//         criticality : Integer;
-// }
