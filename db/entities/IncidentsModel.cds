@@ -17,12 +17,12 @@ using {
  * Incidents created by Customers.
 */
 @odata.draft.enabled
-entity Incidents : cuid, managed {
-    customer      : Association to Customers;
-    title         : String @title: 'Title';
-    urgency       : Association to Urgency;
-    status        : Association to Status;
-    conversations : Composition of many Conversations
-                        on conversations.incidents = $self;
+entity Incidents : managed {
+       key ID     : UUID;
+        customer      : Association to Customers;
+        title         : String @title: 'Title';
+        urgency       : Association to Urgency;
+        status        : Association to Status;
+        conversations : Composition of many Conversations
+                            on conversations.incidents = $self;
 }
-

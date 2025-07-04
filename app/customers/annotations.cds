@@ -225,3 +225,7 @@ annotate service.Incidents with {
     ID @Common.Text : title
 };
 
+annotate service.Customers {
+    ID @readonly
+}
+
