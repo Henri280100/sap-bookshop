@@ -3,8 +3,8 @@ using {sap.common.CodeList} from '@sap/cds/common';
 namespace sap.capire;
 
 entity Urgency : CodeList {
-    key code : UrgencyCode;
-    Criticality: CriticalityLevel;
+    key code        : UrgencyCode;
+        criticality : CriticalityLevel;
 }
 
 type CriticalityLevel : Integer enum {
@@ -13,7 +13,7 @@ type CriticalityLevel : Integer enum {
     Positive = 3;
 }
 
-type UrgencyCode : String enum {
+type UrgencyCode      : String enum {
     high = 'H';
     medium = 'M';
     low = 'L';

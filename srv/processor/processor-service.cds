@@ -12,6 +12,7 @@ service ProcessorService {
 
 annotate ProcessorService.Incidents with @odata.draft.enabled;
 annotate ProcessorService.Customers with @odata.draft.enabled;
+annotate ProcessorService with @(requires: 'support');
 
 
 extend projection ProcessorService.Customers with {

@@ -1,4 +1,4 @@
-using ProcessorService as service from '../../srv/processor/ProcessorService';
+using ProcessorService as service from '../../srv/processor/processor-service';
 
 annotate service.Incidents with @(
     UI.FieldGroup #GeneratedGroup: {
@@ -54,25 +54,29 @@ annotate service.Incidents with @(
             Label: '{i18n>Customer}',
         },
         {
+            $Type: 'UI.DataField',
+            Value: customer.email,
+            Label: '{i18n>Email}',
+        },
+        {
             $Type      : 'UI.DataField',
             Value      : status.descr,
             Label      : '{i18n>Status}',
             Criticality: status.criticality,
+            CriticalityRepresentation : #WithIcon,
         },
         {
             $Type: 'UI.DataField',
             Value: urgency.descr,
             Label: '{i18n>Urgency}',
-        },
-        {
-            $Type: 'UI.DataField',
-            Value: customer.email,
-            Label: 'email',
+            Criticality : urgency.criticality,
+            CriticalityRepresentation : #WithIcon,
+
         },
         {
             $Type: 'UI.DataField',
             Value: customer.phone,
-            Label: 'phone',
+            Label: '{i18n>Phone}',
         },
     ],
     UI.SelectionFields           : [
@@ -98,11 +102,12 @@ annotate service.Incidents with @(
             {
                 $Type: 'UI.DataField',
                 Value: status_code,
+                Criticality : status.criticality,
             },
             {
                 $Type: 'UI.DataField',
                 Value: urgency_code,
-                Criticality : status.criticality,
+                Criticality : urgency.criticality,
             },
         ],
     },

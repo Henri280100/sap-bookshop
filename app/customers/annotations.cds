@@ -1,4 +1,4 @@
-using ProcessorService as service from '../../srv/processor/ProcessorService';
+using ProcessorService as service from '../../srv/processor/processor-service';
 annotate service.Customers with @(
     UI.FieldGroup #GeneratedGroup : {
         $Type : 'UI.FieldGroupType',

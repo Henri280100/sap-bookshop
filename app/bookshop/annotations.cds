@@ -1,4 +1,4 @@
-using ProcessorService as service from '../../srv/processor/ProcessorService';
+using ProcessorService as service from '../../srv/processor/processor-service';
 using from '../../srv/services';
 
 annotate CatalogService.Books with @(

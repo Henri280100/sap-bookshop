@@ -9,7 +9,6 @@ using {
 
 using {
     managed,
-    cuid
 } from '@sap/cds/common';
 
 
@@ -18,7 +17,7 @@ using {
 */
 @odata.draft.enabled
 entity Incidents : managed {
-       key ID     : UUID;
+    key ID            : UUID;
         customer      : Association to Customers;
         title         : String @title: 'Title';
         urgency       : Association to Urgency;
