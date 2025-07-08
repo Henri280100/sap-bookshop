@@ -65,6 +65,7 @@ modules:
           name: srv-api # must be used in xs-app.json as well
           url: ~{srv-url}
           forwardAuthToken: true
+      - name: my-bookshop-auth
     provides:
       - name: app-api
         properties:
@@ -82,9 +83,14 @@ resources:
       config:
         tenant-mode: dedicated
         xsappname: my-bookshop-${org}-${space}
+        oauth2-configuration:
+          redirect-uris:
+            - https://~{app-api/app-uri}/**
       path: ./xs-security.json
       service: xsuaa
       service-plan: application
+    requires:
+      - name: app-api
   - name: my-bookshop-repo-host
     type: org.cloudfoundry.managed-service
     parameters:
