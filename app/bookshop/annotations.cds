@@ -1,5 +1,5 @@
 using ProcessorService as service from '../../srv/processor/processor-service';
-using from '../../srv/services';
+using from '../../srv/catalog/catalog-service';
 
 annotate CatalogService.Books with @(
     UI.SelectionFields : [

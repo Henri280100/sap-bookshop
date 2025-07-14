@@ -1,4 +1,4 @@
-using {sap.capire as sap} from '../db/schema';
+using {sap.capire as sap} from '../../db/schema';
 
 service CatalogService {
     entity Books   as projection on sap.Books;
