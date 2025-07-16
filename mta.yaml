@@ -29,6 +29,22 @@ modules:
       - name: my-bookshop-destination
       - name: my-bookshop-db
 
+  - name: my-bookshop-router
+    type: approuter.nodejs
+    path: app/router
+    parameters:
+      disk-quota: 512M
+      memory: 256M
+    requires:
+      - name: srv-api
+        group: destinations
+        properties:
+          name: srv-api
+          url: ~{srv-url}
+          forwardAuthToken: true
+      - name: my-bookshop-html5-runtime
+      - name: my-bookshop-destination
+
   - name: my-bookshop
     type: approuter.nodejs
     path: app/router
@@ -154,6 +170,7 @@ modules:
               sap.cloud.service: mybookshop.service
 
 resources:
+
   - name: my-bookshop-auth
     type: org.cloudfoundry.managed-service
     requires:

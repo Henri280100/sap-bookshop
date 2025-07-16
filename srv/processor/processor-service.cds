@@ -10,16 +10,6 @@ service ProcessorService {
   entity Status        as projection on capire.Status;
 }
 
-annotate ProcessorService with @(requires: 'support');
-
-// service AdminService {
-//   @requires: 'admin'
-
-//   @requires: 'admin'
-
-
-// }
-
 annotate ProcessorService.Incidents with @odata.draft.enabled;
 annotate ProcessorService.Customers with @odata.draft.enabled;
 
